@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.autotest.StackTests1" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-23T21:44:06" hostname="pc46" time="0.017">
+  <properties/>
+  <testcase name="run()" classname="org.autotest.StackTests1" time="0.017"/>
+  <system-out><![CDATA[-> Corriendo tests de StackTests1 para la clase: StackAr (Stack original)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated1608 (MinusOneConstantMutator: Se reemplazó 0 por -1 en la línea 53.)
+   [X] Falló el test testDefaultConstructor en la línea 20
+-> Corriendo tests de StackTests1 para la clase: StackArMutated3807 (EmptyReturnsMutator: Se reemplazó readIndex + 1 por 0 en la línea 49.)
+   [X] Falló el test testSizeIncreasesByOne en la línea 15
+-> Corriendo tests de StackTests1 para la clase: StackArMutated5619 (ConditionalsBoundaryMutator: Se reemplazó <= por < en la línea 114.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated1987 (MinusOneConstantMutator: Se reemplazó 1 por -1 en la línea 88.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated2455 (ConditionalsBoundaryMutator: Se reemplazó < por <= en la línea 19.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated9757 (MathMutator: Se reemplazó * por / en la línea 89.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated9427 (MathMutator: Se reemplazó + por - en la línea 90.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated5369 (ConditionalsBoundaryMutator: Se reemplazó > por >= en la línea 115.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated6898 (MinusOneConstantMutator: Se reemplazó 0 por -1 en la línea 114.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated8822 (MinusOneConstantMutator: Se reemplazó 10 por -1 en la línea 8.)
+   [X] Falló el test testSizeIncreasesByOne en la línea 12
+-> Corriendo tests de StackTests1 para la clase: StackArMutated1682 (MinusOneConstantMutator: Se reemplazó 31 por -1 en la línea 87.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated5278 (MathMutator: Se reemplazó * por / en la línea 90.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated2893 (MinusOneConstantMutator: Se reemplazó 0 por -1 en la línea 19.)
+   [X] Falló el test testConstructorWithNegativeCapacity en la línea 29
+-> Corriendo tests de StackTests1 para la clase: StackArMutated4489 (EmptyReturnsMutator: Se reemplazó b.toString() por "" en la línea 123.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated4323 (EmptyReturnsMutator: Se reemplazó result por 0 en la línea 91.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated7423 (MinusOneConstantMutator: Se reemplazó 0 por -1 en la línea 115.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated4100 (MinusOneConstantMutator: Se reemplazó 1 por -1 en la línea 49.)
+   [X] Falló el test testSizeIncreasesByOne en la línea 13
+-> Corriendo tests de StackTests1 para la clase: StackArMutated7055 (MathMutator: Se reemplazó + por - en la línea 89.)
+-> Corriendo tests de StackTests1 para la clase: StackArMutated776 (MathMutator: Se reemplazó + por - en la línea 49.)
+   [X] Falló el test testSizeIncreasesByOne en la línea 13
+-> Mutantes generados: 19
+-> Mutantes eliminados: 6
+    - StackArMutated8822 (MinusOneConstantMutator: Se reemplazó 10 por -1 en la línea 8.)
+    - StackArMutated776 (MathMutator: Se reemplazó + por - en la línea 49.)
+    - StackArMutated2893 (MinusOneConstantMutator: Se reemplazó 0 por -1 en la línea 19.)
+    - StackArMutated4100 (MinusOneConstantMutator: Se reemplazó 1 por -1 en la línea 49.)
+    - StackArMutated1608 (MinusOneConstantMutator: Se reemplazó 0 por -1 en la línea 53.)
+    - StackArMutated3807 (EmptyReturnsMutator: Se reemplazó readIndex + 1 por 0 en la línea 49.)
+-> Mutantes vivos: 13
+    - StackArMutated5619 (ConditionalsBoundaryMutator: Se reemplazó <= por < en la línea 114.)
+    - StackArMutated1987 (MinusOneConstantMutator: Se reemplazó 1 por -1 en la línea 88.)
+    - StackArMutated4323 (EmptyReturnsMutator: Se reemplazó result por 0 en la línea 91.)
+    - StackArMutated5369 (ConditionalsBoundaryMutator: Se reemplazó > por >= en la línea 115.)
+    - StackArMutated4489 (EmptyReturnsMutator: Se reemplazó b.toString() por "" en la línea 123.)
+    - StackArMutated9757 (MathMutator: Se reemplazó * por / en la línea 89.)
+    - StackArMutated9427 (MathMutator: Se reemplazó + por - en la línea 90.)
+    - StackArMutated6898 (MinusOneConstantMutator: Se reemplazó 0 por -1 en la línea 114.)
+    - StackArMutated2455 (ConditionalsBoundaryMutator: Se reemplazó < por <= en la línea 19.)
+    - StackArMutated1682 (MinusOneConstantMutator: Se reemplazó 31 por -1 en la línea 87.)
+    - StackArMutated7423 (MinusOneConstantMutator: Se reemplazó 0 por -1 en la línea 115.)
+    - StackArMutated5278 (MathMutator: Se reemplazó * por / en la línea 90.)
+    - StackArMutated7055 (MathMutator: Se reemplazó + por - en la línea 89.)
+-> Mutation score: 31%
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO org.reflections.Reflections - Reflections took 6 ms to scan 1 urls, producing 1 keys and 19 values
+]]></system-err>
+</testsuite>
