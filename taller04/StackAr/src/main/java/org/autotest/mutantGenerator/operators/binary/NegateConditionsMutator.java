@@ -27,6 +27,7 @@ public class NegateConditionsMutator extends MutationOperator {
             return false;
         }
         // COMPLETAR
+        CtBinaryOperator op = (CtBinaryOperator)candidate;
         List<BinaryOperatorKind> targetOperations = Arrays.asList(
                 BinaryOperatorKind.EQ, // ==
                 BinaryOperatorKind.NE, // !=
@@ -35,7 +36,7 @@ public class NegateConditionsMutator extends MutationOperator {
                 BinaryOperatorKind.GE, // >=
                 BinaryOperatorKind.GT // >
         );
-        return false;
+        return targetOperations.contains(op.getKind());
     }
 
     @Override

@@ -25,13 +25,19 @@ public class ZeroConstantMutator extends MutationOperator {
         }
 
         CtLiteral op = (CtLiteral)candidate;
-        String type = op.getValue().toString();
-        List<String> targetTypes = Arrays.asList(
-                "int"
-        );
+        if(op.getValue()!=null) {
+            String type = op.getType().toString();
+            List<String> targetTypes = Arrays.asList(
+                    "int"
+            );
 
-        if (!targetTypes.contains(type)) {
-            return false;
+            if(op.getValue().toString().equals("0")){
+                return false;
+            }
+
+            if (targetTypes.contains(type)) {
+                return true;
+            }
         }
         return false;
     }

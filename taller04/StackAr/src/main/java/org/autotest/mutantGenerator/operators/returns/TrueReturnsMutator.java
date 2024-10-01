@@ -26,10 +26,14 @@ public class TrueReturnsMutator extends MutationOperator {
         }
         // COMPLETAR
         CtReturn op = (CtReturn)candidate;
+
+        if(op.getReturnedExpression().toString().equals("true")){
+            return false;
+        }
+
         String type = getReturnedExpressionType(op);
         List<String> targetTypes = Arrays.asList(
-                "java.lang.String",
-                "int"
+                "boolean"
         );
         return targetTypes.contains(type);
     }

@@ -27,12 +27,9 @@ public class NullReturnsMutator extends MutationOperator {
         }
         // COMPLETAR
         CtReturn op = (CtReturn)candidate;
+
         CtTypeReference type = getReturnedExpressionType(op);
-        List<String> targetTypes = Arrays.asList(
-                "java.lang.String",
-                "int"
-        );
-        return targetTypes.contains(type);
+        return !type.isPrimitive();
     }
 
     @Override
@@ -48,7 +45,7 @@ public class NullReturnsMutator extends MutationOperator {
 
     private CtExpression getNullValueForReturnExpression(CtReturn op) {
         // COMPLETAR
-        return null;
+        return op.getFactory().Code().createLiteral(null);
     }
 
     @Override

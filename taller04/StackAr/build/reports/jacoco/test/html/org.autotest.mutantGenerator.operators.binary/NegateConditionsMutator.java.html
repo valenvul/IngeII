@@ -27,7 +27,8 @@ import java.util.List;
 <span class="nc" id="L27">            return false;</span>
         }
         // COMPLETAR
-<span class="nc" id="L30">        List&lt;BinaryOperatorKind&gt; targetOperations = Arrays.asList(</span>
+<span class="nc" id="L30">        CtBinaryOperator op = (CtBinaryOperator)candidate;</span>
+<span class="nc" id="L31">        List&lt;BinaryOperatorKind&gt; targetOperations = Arrays.asList(</span>
                 BinaryOperatorKind.EQ, // ==
                 BinaryOperatorKind.NE, // !=
                 BinaryOperatorKind.LE, // &lt;=
@@ -35,40 +36,40 @@ import java.util.List;
                 BinaryOperatorKind.GE, // &gt;=
                 BinaryOperatorKind.GT // &gt;
         );
-<span class="nc" id="L38">        return false;</span>
+<span class="nc" id="L39">        return targetOperations.contains(op.getKind());</span>
     }
 
     @Override
     public void process(CtElement candidate) {
-<span class="nc" id="L43">        CtBinaryOperator op = (CtBinaryOperator)candidate;</span>
-<span class="nc" id="L44">        op.setKind(getReplacement(op.getKind()));</span>
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L44">        CtBinaryOperator op = (CtBinaryOperator)candidate;</span>
+<span class="nc" id="L45">        op.setKind(getReplacement(op.getKind()));</span>
+<span class="nc" id="L46">    }</span>
 
     public BinaryOperatorKind getReplacement(BinaryOperatorKind kind) {
         // COMPLETAR
-<span class="nc bnc" id="L49" title="All 7 branches missed.">        switch (kind) {</span>
+<span class="nc bnc" id="L50" title="All 7 branches missed.">        switch (kind) {</span>
             case EQ:
-<span class="nc" id="L51">                return BinaryOperatorKind.NE;</span>
+<span class="nc" id="L52">                return BinaryOperatorKind.NE;</span>
             case NE:
-<span class="nc" id="L53">                return BinaryOperatorKind.EQ;</span>
+<span class="nc" id="L54">                return BinaryOperatorKind.EQ;</span>
             case GE:
-<span class="nc" id="L55">                return BinaryOperatorKind.LT;</span>
+<span class="nc" id="L56">                return BinaryOperatorKind.LT;</span>
             case GT:
-<span class="nc" id="L57">                return BinaryOperatorKind.LE;</span>
+<span class="nc" id="L58">                return BinaryOperatorKind.LE;</span>
             case LE:
-<span class="nc" id="L59">                return BinaryOperatorKind.GT;</span>
+<span class="nc" id="L60">                return BinaryOperatorKind.GT;</span>
             case LT:
-<span class="nc" id="L61">                return BinaryOperatorKind.GE;</span>
+<span class="nc" id="L62">                return BinaryOperatorKind.GE;</span>
         }
-<span class="nc" id="L63">        return null;</span>
+<span class="nc" id="L64">        return null;</span>
     }
 
     @Override
     public String describeMutation(CtElement candidate) {
-<span class="nc" id="L68">        CtBinaryOperator op = (CtBinaryOperator)candidate;</span>
-<span class="nc" id="L69">        return this.getClass().getSimpleName() + &quot;: Se reemplazó &quot; +</span>
-<span class="nc" id="L70">                BinaryOperatorKindToString.get(op.getKind()) + &quot; por &quot; + BinaryOperatorKindToString.get(getReplacement(op.getKind())) +</span>
-<span class="nc" id="L71">                &quot; en la línea &quot; + op.getPosition().getLine() + &quot;.&quot;;</span>
+<span class="nc" id="L69">        CtBinaryOperator op = (CtBinaryOperator)candidate;</span>
+<span class="nc" id="L70">        return this.getClass().getSimpleName() + &quot;: Se reemplazó &quot; +</span>
+<span class="nc" id="L71">                BinaryOperatorKindToString.get(op.getKind()) + &quot; por &quot; + BinaryOperatorKindToString.get(getReplacement(op.getKind())) +</span>
+<span class="nc" id="L72">                &quot; en la línea &quot; + op.getPosition().getLine() + &quot;.&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
