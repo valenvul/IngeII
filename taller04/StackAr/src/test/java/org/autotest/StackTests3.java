@@ -63,8 +63,10 @@ public class StackTests3 extends MutationAnalysisRunner {
     }
 
     // COMPLETAR
-    public void testCompareStacks() throws Exception {
+    public void testEqualsMethod() throws Exception {
         Stack stack = createStack(2);
+        // un stack vacío no es null
+        assertNotEquals(stack, null);
         stack.push(42);
         Stack stack2 = createStack(2);
         stack2.push(42);
@@ -75,11 +77,8 @@ public class StackTests3 extends MutationAnalysisRunner {
         //un stack es igual a si mismo
         assertEquals(stack,stack);
         stack2.push(43);
+        //stacks diferentes no son iguales
         assertNotEquals(stack,stack2);
-        Stack stack3 = createStack(1);
-        stack3.push(42);
-
-        assertNotEquals(stack, null);
     }
 
     public void testCreateStackWithCapacity0() throws Exception {
@@ -100,8 +99,11 @@ public class StackTests3 extends MutationAnalysisRunner {
         Object top = stack.top();
         assertEquals(top, 42);
         assertEquals(stack.top(), 42);
-        stack.pop();
+    }
+
+    public void testCantTopOnEmptyStack() throws Exception {
         assertThrows(IllegalStateException.class, () -> {
+            Stack stack = createStack();
             stack.top();
         });
     }
@@ -114,20 +116,20 @@ public class StackTests3 extends MutationAnalysisRunner {
         assertTrue(stack.isEmpty());
     }
 
+    public void testCantPopOnEmptyStack() throws Exception {
+        assertThrows(IllegalStateException.class, () -> {
+            Stack stack = createStack();
+            stack.pop();
+        });
+        // no funciona para eliminar el 1110 porque este llama al top que tira la excepción cuando se lo llama en un empty stack
+    }
+
     public void testHashMetod() throws Exception {
         Stack stack = createStack(1);
         stack.push(42);
         Stack stack2 = createStack(1);
         assertNotEquals(stack.hashCode(),stack2.hashCode());
 
-    }
-
-    public void testCantPopOnEmptyStack() throws Exception {
-        assertThrows(IllegalStateException.class, () -> {
-            Stack stack = createStack(1);
-            stack.pop();
-            //no funciono, mutante 1110
-        });
     }
 
     public void testDefaultCapacityStack() throws Exception {

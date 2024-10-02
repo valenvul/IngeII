@@ -36,8 +36,12 @@ public class StackAr extends Stack {
 	public boolean repOK() {
 		try {
 			// COMPLETAR
-
-			return true;
+			boolean res = elems != null;
+			res = res && readIndex >= -1 && readIndex < elems.length;
+			for (int i = readIndex+1; i < elems.length; i++) {
+				res = res && elems[i] == null;
+			}
+			return res;
 		} catch (Exception | Error e) {
 			System.err.println("ERROR en el método repOK.");
 			e.printStackTrace();
@@ -70,6 +74,7 @@ public class StackAr extends Stack {
 			throw new IllegalStateException();
 		}
 		Object rv = this.top();
+		elems[readIndex] = null;
 		readIndex--;
 		return rv;
 	}
