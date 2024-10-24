@@ -8,17 +8,17 @@ class TestCgiDecode(unittest.TestCase):
         t = cgi_decode("+")
         self.assertEqual(" ", t)
 
-    def test1(self):
+    def testVariableHex(self):
         t = cgi_decode("%01")
         self.assertEqual("\x01", t)
 
-    def test2(self):
+    def testVariableDigitoAltoNoHex(self):
         self.assertRaises(ValueError, cgi_decode, "%GG")
 
-    def test3(self):
+    def testVariableDigitoBajoNoHex(self):
         self.assertRaises(ValueError, cgi_decode, "%1G")
 
-    def test4(self):
+    def testMensajeNoCodificado(self):
         t = cgi_decode("Hello World")
         self.assertEqual("Hello World", t)
 
